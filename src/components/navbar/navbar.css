@@ -1,0 +1,72 @@
+.toggler {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: rgb(192, 192, 192);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.toggler:hover {
+    background-color: rgb(165, 165, 165);
+}
+
+.toggler::before {
+    content:'';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: white;
+    transform: translateY(-5px);
+    transition: .2s;
+}
+
+.toggler::after {
+    content:'';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: white;
+    transform: translateY(5px);
+    transition: .2s;
+}
+
+.toggler.active::before {
+    transform: translateY(0px) rotate(45deg);
+}
+
+.toggler.active::after {
+    transform: translateY(0px) rotate(-45deg);
+}
+
+.dropdown {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: rgb(192, 192, 192);
+    gap: 25px;
+    padding-top: 6%;
+}
+
+.dropdown.active {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+}
+
+.nav-item {
+    display: flex;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: end;
+    padding-right: 17%;
+}
