@@ -1,7 +1,17 @@
+import React, {useEffect, useState} from "react";
 import Button from "./Button";
 import Logotype from "./Logo";
+import PopUp from "./Popup";
 
 const Home = () => {
+    const [open, setOpen] = useState(false);
+
+    useEffect (() => {
+    document.addEventListener("mousedown", () => {
+        setOpen(false);
+        });
+    });
+
     return (
         <div className="header">
             <Logotype></Logotype>
@@ -11,9 +21,13 @@ const Home = () => {
                     ultricies sem condimentum pat laoreet pharetra.
                 </p>
                 <div className="button-container ">
-                    <Button>BOKA TID</Button>
+                    <Button OnClick= {() => setOpen(!open)
+                }>BOKA TID</Button>
                 </div>
             </div>
+            {
+                open?<PopUp/>:null
+            }
         </div>
     )
 }

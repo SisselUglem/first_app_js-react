@@ -12,8 +12,6 @@ function App() {
       <Home/>
     </>
   );
-
-
 }
 
 export default App;
