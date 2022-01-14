@@ -99,3 +99,7 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+.button {
+  background-image: linear-gradient(red, yellow);
+}
